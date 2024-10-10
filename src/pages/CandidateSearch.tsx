@@ -78,7 +78,7 @@ const CandidateSearch = () => {
   };
 
   console.log(`currentCandidate:`, currentCandidate);
-  // console.log(currentCandidate.avatar_url);
+  
 
   // rendering the searched candidates one by one
   return currentIndex + 1 < candidates.length ? (

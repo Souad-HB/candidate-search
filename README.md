@@ -52,7 +52,7 @@ This project is licensed under the MIT License. To learn more about this means, 
 
 ## Deployment
 
-Visit this [link]() to see the app live.
+Visit this [link](https://candidate-search-s6ch.onrender.com) to see the app live.
 
 ## Questions
 
