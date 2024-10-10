@@ -1,6 +1,7 @@
 import type React from "react";
 import type Candidate from "../interfaces/Candidate.interface";
 
+
 // define the candidatesSaved and the removeFromStorage props
 interface SavedCandidatesProps {
   candidatesSaved: Candidate[];
@@ -8,20 +9,21 @@ interface SavedCandidatesProps {
     | ((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
     | null;
 }
-// we pass it the candidates that were saved, and the option to remove from storage
+
+// we pass the candidates that were saved, and the option to remove from storage
 const SavedCandidatesList = ({
   candidatesSaved,
   removeFromStorage,
 }: SavedCandidatesProps) => {
+  
   return (
     <div>
       <table className="table">
         <thead>
-          {" "}
-          {/* table header */}
           <tr>
             <th>Image</th>
             <th>Name</th>
+            <th>Username</th>
             <th>Location</th>
             <th>Email</th>
             <th>Company</th>
@@ -30,8 +32,6 @@ const SavedCandidatesList = ({
           </tr>
         </thead>
         <tbody>
-          {" "}
-          {/* table body: we map through each candidate that was saved and we extract their peoperties */}
           {candidatesSaved.map((candidate, index) => (
             <tr key={index}>
               <td style={{ textAlign: "center" }}>
@@ -47,6 +47,7 @@ const SavedCandidatesList = ({
                 />
               </td>
               <td>{candidate.name}</td>
+              <td>{candidate.login}</td>
               <td>{candidate.location}</td>
               <td>{candidate.email}</td>
               <td>{candidate.company}</td>

@@ -91,7 +91,10 @@ const CandidateSearch = () => {
       />
     </div>
   ) : (
-    <p>No more candidates to review. Refresh the page.</p>
+    <div>
+    <h1>Candidate Search</h1>
+    <p style={{textAlign:"center"}}>No more candidates to review. Refresh the page.</p>
+    </div>
   );
 };
 
