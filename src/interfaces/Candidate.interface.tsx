@@ -1,5 +1,5 @@
-// TODO: Create an interface for the Candidate objects returned by the API
-interface Candidate { // check here the right properties of the interfaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+// Interface for the Candidate objects returned by the API
+interface Candidate { 
   readonly name: string;
   readonly login: string;
   readonly location: string;

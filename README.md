@@ -42,7 +42,7 @@ See the below screenshot as an example:
 
 - React
 - Typescript
-- Server-Side API (Github API)
+- Github API
 - Vite
 - Render
 

@@ -1,7 +1,6 @@
 import type React from "react";
 import type Candidate from "../interfaces/Candidate.interface";
 
-
 // define the candidatesSaved and the removeFromStorage props
 interface SavedCandidatesProps {
   candidatesSaved: Candidate[];
@@ -15,7 +14,6 @@ const SavedCandidatesList = ({
   candidatesSaved,
   removeFromStorage,
 }: SavedCandidatesProps) => {
-  
   return (
     <div>
       <table className="table">

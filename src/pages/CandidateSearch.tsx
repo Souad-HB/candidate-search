@@ -13,7 +13,7 @@ const CandidateSearch = () => {
   // fetching candidate data from the API once the page loads
   useEffect(() => {
     const fetchCandidates = async () => {
-      const fetchedCandidates = await searchGithub(); // fetching the initial basic data
+      const fetchedCandidates = await searchGithub(); // fetching the initial basic data from the searchGithub
       console.log(fetchedCandidates);
 
       const enrichedCandidates = await Promise.all(
@@ -21,9 +21,9 @@ const CandidateSearch = () => {
           
           try {
             //if all is good and the user is found then give me the detailed data
-            const detailedCandidate = await searchGithubUser(candidate.login); // fetching the detailed data
+            const detailedCandidate = await searchGithubUser(candidate.login); // fetching the detailed data by the login (username) from the seatchGithubUser
             console.log(`detailedCandidate:`, detailedCandidate);
-            return { ...candidate, ...detailedCandidate };
+            return { ...candidate, ...detailedCandidate }; // give me the data combined between both APIs
             
           } catch (error) {
             //gracefully taking care of the users that are not found
@@ -41,7 +41,7 @@ const CandidateSearch = () => {
       setCandidates(validCandidates);
     };
 
-    // call the fetchCandidates function on page load
+    // call the fetchCandidates function on page load to fetch the APIs
     fetchCandidates();
   }, []);
 
@@ -59,7 +59,7 @@ const CandidateSearch = () => {
     if (currentIndex + 1 < candidates.length) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      console.log("no more candidates, reload the page"); // to be handled
+      console.log("no more candidates, reload the page"); 
     }
   };
 
@@ -80,7 +80,7 @@ const CandidateSearch = () => {
   console.log(`currentCandidate:`, currentCandidate);
   
 
-  // rendering the searched candidates one by one
+  // rendering the searched candidates one by one, if there are none anymore show the message
   return currentIndex + 1 < candidates.length ? (
     <div>
       <h1>Candidate Search</h1>
